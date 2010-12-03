@@ -1,6 +1,6 @@
 Package: ROptRegTS
-Version: 0.7
-Date: 2009-10-16
+Version: 0.8
+Date: 2010-12-03
 Title: Optimally robust estimation for regression-type models
 Description: Optimally robust estimation for regression-type models
         using S4 classes and methods
@@ -12,9 +12,12 @@ LazyLoad: yes
 License: LGPL-3
 Encoding: latin1
 URL: http://robast.r-forge.r-project.org/
-LastChangedDate: {$LastChangedDate: 2009-10-16 19:33:10 +0200 (Fr, 16.
-        Okt 2009) $}
-LastChangedRevision: {$LastChangedRevision: 390 $}
-Packaged: 2009-11-04 11:03:07 UTC; btms02
+LastChangedDate: {$LastChangedDate: 2010-12-03 12:13:24 +0100 (Fri, 03
+        Dec 2010) $}
+LastChangedRevision: {$LastChangedRevision: 440 $}
+SVNRevision: 439
 Repository: CRAN
-Date/Publication: 2009-11-04 13:09:21
+Repository/R-Forge/Project: robast
+Repository/R-Forge/Revision: 445
+Date/Publication: 2011-01-21 08:49:48
+Packaged: 2011-01-05 21:44:54 UTC; rforge
