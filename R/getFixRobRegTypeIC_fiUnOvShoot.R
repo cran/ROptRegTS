@@ -53,14 +53,14 @@ setMethod("getFixRobRegTypeIC", signature(ErrorDistr = "Norm",
              tol, warn, Algo, cont){
         radiusCurve <- neighbor@radiusCurve
         if(is(Regressor, "AbscontDistribution")){
-            xlower <- ifelse(is.finite(q(Regressor)(0)), q(Regressor)(0), q(Regressor)(distr::TruncQuantile))
-            xupper <- ifelse(is.finite(q(Regressor)(1)), q(Regressor)(1), q(Regressor)(1 - distr::TruncQuantile))
+            xlower <- ifelse(is.finite(q.l(Regressor)(0)), q.l(Regressor)(0), q.l(Regressor)(getdistrOption("TruncQuantile")))
+            xupper <- ifelse(is.finite(q.l(Regressor)(1)), q.l(Regressor)(1), q.l(Regressor)(1 - getdistrOption("TruncQuantile")))
             x.vec <- seq(from = xlower, to = xupper, length = 1000)
         }else{
             if(is(Regressor, "DiscreteDistribution"))
                 x.vec <- support(Regressor) 
             else
-                x.vec <- unique(r(Regressor)(distr::RtoDPQ.e))
+                x.vec <- unique(r(Regressor)(getdistrOption("RtoDPQ.e")))
         }
 
         radCx <- radiusCurve(x.vec)
@@ -100,11 +100,11 @@ setMethod("getFixRobRegTypeIC", signature(ErrorDistr = "Norm",
                     return(NA)
             }
         }else{
-            if(is.finite(q(Regressor)(0)))
+            if(is.finite(q.l(Regressor)(0)))
                 yleft <- NA
             else
                 yleft <- b[1]
-            if(is.finite(q(Regressor)(1)))
+            if(is.finite(q.l(Regressor)(1)))
                 yright <- NA
             else
                 yright <- b.vec[length(b.vec)]
